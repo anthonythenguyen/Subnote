@@ -1,6 +1,11 @@
 #landingHeader{
     display: flex;
+    justify-content: space-between;
     color: #070707;
+}
+#loginButton{
+    padding: 18px 50px;
+    font-size: large;
 }
 
 header{
@@ -9,9 +14,19 @@ header{
     margin: 0;
 }
 
-body{
+main{
     background-color: #3D3D3D;
     color: #FBFBFB;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-color: #03C9A1;
+    color: #070707;
     margin: 0;
     padding: 0;
 }
