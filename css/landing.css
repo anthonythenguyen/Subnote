@@ -3,6 +3,7 @@
     justify-content: space-between;
     color: #070707;
 }
+
 #loginButton{
     padding: 18px 50px;
     font-size: large;
@@ -22,6 +23,26 @@ main{
 .center{
     display: flex;
     justify-content: center;
+    padding: 10px;
+}
+
+#launchApp{
+    padding: 18px 50px;
+    font-size: large;
+}
+
+.button{
+    border-radius: 22.5px;
+    border: none;
+    transition: background-color .15s;
+}
+
+.button:hover{
+    background-color: #E6E6E6;
+}
+
+.button:active{
+    background-color: #D1D1D1;
 }
 
 body{
