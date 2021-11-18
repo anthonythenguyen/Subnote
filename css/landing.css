@@ -1,0 +1,17 @@
+#landingHeader{
+    display: flex;
+    color: #070707;
+}
+
+header{
+    width: 100%;
+    background-color: #03C9A1;
+    margin: 0;
+}
+
+body{
+    background-color: #3D3D3D;
+    color: #FBFBFB;
+    margin: 0;
+    padding: 0;
+}
