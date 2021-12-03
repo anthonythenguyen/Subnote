@@ -1,28 +1,22 @@
 {
-  "name": "subnote",
+  "name": "app",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.0",
-    "@rails/actioncable": "^6.0.0",
-    "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.4.3",
-    "babel-loader": "^8.2.3",
-    "html-webpack-plugin": "^5.5.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "turbolinks": "^5.2.0",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1"
+    "@rails/webpacker": "^6.0.0-rc.6",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0"
   },
   "version": "0.1.0",
-  "devDependencies": {
-    "webpack-dev-server": "^4.6.0"
+  "babel": {
+    "presets": [
+      "./node_modules/@rails/webpacker/package/babel/preset.js"
+    ]
   },
-  "scripts": {
-    "dev": "webpack serve",
-    "build": "webpack"
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@webpack-cli/serve": "^1.6.0",
+    "webpack-dev-server": "^4.6.0"
   }
 }
