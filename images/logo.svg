@@ -30,11 +30,8 @@ xmlns:dc="http://purl.org/dc/elements/1.1/"
             <ellipse cx="91" cy="14" rx="9" ry="9" 
             style="fill:white;stroke:black;stroke-width:1.5;" />
         </g>
-        <line x1="40" y1="70" x2="100" y2="70"
+        <line x1="40" y1="80" x2="100" y2="80"
             style="stroke:black" />
-        <text style="fill:black; font-size:10;" x="50" y="85">
-            Note Taker
-        </text>
         <line x1="40" y1="95" x2="100" y2="95"
             style="stroke:black" />
         <line x1="40" y1="110" x2="100" y2="110"
