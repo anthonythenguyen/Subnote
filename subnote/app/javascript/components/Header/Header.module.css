@@ -1,0 +1,12 @@
+.mainDiv {
+  background-color: black;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+.headerText {
+  color: white;
+  margin: 0;
+  padding: 1rem;
+}
