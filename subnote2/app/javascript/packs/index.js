@@ -1,12 +1,10 @@
 import ReactDOM from "react-dom";
-
-function Index(props) {
-  return <h1>Hello World</h1>;
-}
+import React from "react";
+import App from "../components/App";
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
-    <Index />,
+    <App />,
     document.body.appendChild(document.createElement("div"))
   );
 });
