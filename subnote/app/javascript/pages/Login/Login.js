@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "../Pages.module.css";
 
 function Login(props) {
+    const [credentials, setCredentials] = useState({
+        loginEmail: "",
+        loginPassword: "",
+    });
+    function loginClicked() {
+        console.log(credentials)
+    }
     return (
         <div>
             <div className={styles.loginContainer}>
@@ -12,19 +19,33 @@ function Login(props) {
                 </label>
                 <input
                     type="text"
-                    id="loginEmail"
+                    value={credentials.loginEmail}
+                    onChange={(e) =>
+                        setCredentials((previous) => {
+                            let newCredentials = { ...previous };
+                            newCredentials.loginEmail = e.target.value;
+                            return newCredentials;
+                        })
+                    }
                     className={styles.loginStuff}
                 ></input>
                 <label htmlFor="loginPassword" className={styles.loginStuff}>
                     Password
                 </label>
                 <input
-                    type="text"
-                    id="loginPassword"
+                    type="password"
+                    value={credentials.loginPassword}
+                    onChange={(e) =>
+                        setCredentials((previous) => {
+                            let newCredentials = { ...previous };
+                            newCredentials.loginPassword = e.target.value;
+                            return newCredentials;
+                        })
+                    }
                     className={styles.loginStuff}
                 ></input>
                 <br></br>
-                <button>Login</button>
+                <button onClick={loginClicked}>Login</button>
             </div>
         </div>
     );
