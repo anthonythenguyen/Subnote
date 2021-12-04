@@ -1,51 +1,69 @@
 .loginStuff {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
 }
 
 .loginContainer {
-    display: flex;
-    flex-direction: column;
-    background-color: #dddddd;
-    border-radius: 7px;
-    box-shadow: 5px 5px 15px #444;
-    padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #dddddd;
+  border-radius: 7px;
+  box-shadow: 5px 5px 15px #444;
+  padding: 3rem;
 }
 
 .LoginHeader {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .mainDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 15vh;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #ffffff;
-    background-image: url("background.jpeg");
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 15vh;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  background-image: url("background.jpeg");
 }
 
 .navButton {
-    padding: 0rem 2.5rem;
-    border-radius: 7px;
-    background-color: #aaaaaa;
-    box-shadow: 5px 5px 15px #444;
-    text-decoration: none;
-    color: inherit;
+  border-radius: 7px;
+  background-color: #aaaaaa;
+  box-shadow: 5px 5px 15px #444;
+  text-decoration: none;
+  color: inherit;
+  flex-grow: 1;
+}
+
+.navButton p {
+  padding: 0rem 2.5rem;
 }
 
 .loginSignupContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 0.5rem;
-    padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navButton div {
+  display: none;
 }
 
 .activePage {
-    background-color: #dddddd;
+  background-color: #dddddd;
+}
+
+.activePage div {
+  display: block;
+  background-color: #dddddd;
+  height: 50%;
+  width: 100%;
+  top: -7px;
+  left: 0;
+  position: relative;
 }
