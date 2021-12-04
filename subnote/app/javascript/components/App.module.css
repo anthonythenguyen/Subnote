@@ -1,0 +1,51 @@
+.loginStuff {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #dddddd;
+    border-radius: 7px;
+    box-shadow: 5px 5px 15px #444;
+    padding: 3rem;
+}
+
+.LoginHeader {
+    margin-top: 0;
+}
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 15vh;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    background-image: url("background.jpeg");
+}
+
+.navButton {
+    padding: 0rem 2.5rem;
+    border-radius: 7px;
+    background-color: #aaaaaa;
+    box-shadow: 5px 5px 15px #444;
+    text-decoration: none;
+    color: inherit;
+}
+
+.loginSignupContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.activePage {
+    background-color: #dddddd;
+}
