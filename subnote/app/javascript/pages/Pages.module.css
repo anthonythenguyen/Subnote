@@ -1,0 +1,18 @@
+.loginStuff {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #dddddd;
+    border-radius: 7px;
+    box-shadow: 5px 5px 15px #444;
+    padding: 3rem;
+}
+
+.LoginHeader {
+    margin-top: 0;
+}

@@ -1,0 +1,31 @@
+.landingHeader {
+    display: flex;
+    justify-content: space-between;
+    color: #070707;
+    align-content: center;
+}
+
+.header {
+    width: 100%;
+    background-color: #03c9a1;
+    margin: 0;
+}
+
+.main {
+    background-color: #3d3d3d;
+    color: #fbfbfb;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.body {
+    background-color: #03c9a1;
+    color: #070707;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
