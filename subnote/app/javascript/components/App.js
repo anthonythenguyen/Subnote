@@ -8,6 +8,7 @@ import {
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
+import Notes from "../pages/Notes/Notes";
 import styles from "./App.module.css";
 
 const loginNav = (
@@ -35,6 +36,7 @@ function App(props) {
         <Router>
             <Routes>
                 <Route exact path="/" element={<Home />} />
+                <Route exact path="/notes" element={<Notes />} />
                 <Route
                     exact
                     path="/login"

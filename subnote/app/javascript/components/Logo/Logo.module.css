@@ -1,4 +1,12 @@
 .Logo {
     font-family: "Antic Slab", serif;
-    padding: 0 1rem;
+    padding: 1rem;
+    margin: 0;
+}
+
+.logoContainer {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
