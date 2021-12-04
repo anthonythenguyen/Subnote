@@ -4,8 +4,8 @@ import styles from "./Logo.module.css";
 
 function Logo(props) {
     return (
-        <div>
-            <h1 className={styles.Logo}>[subnote]</h1>
+        <div className={styles.logoContainer}>
+            <h1 className={styles.Logo}>[{props.small ? "sn" : "subnote"}]</h1>
         </div>
     );
 }

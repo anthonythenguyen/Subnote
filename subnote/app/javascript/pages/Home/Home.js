@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import styles from "./home.module.css";
 import svg from "../../assets/images/logo.svg";
 import Button from "../../components/Button/Button";
 import Logo from "../../components/Logo/Logo";
+import styles from "./home.module.css";
 
 function Home(props) {
     return (
