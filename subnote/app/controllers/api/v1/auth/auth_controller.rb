@@ -1,14 +1,15 @@
-class Api::V1::AuthenticationController < ApplicationController
+class Api::V1::Auth::AuthController < ApplicationController
 
     def login
         @user = User.find_by(email: params[:email])
         if @user
             if (@user.authenticate(params[:password]))
-                payload = { user_id: @user.uuid }
-                secret = ENV["SECRET_KEY_BASE"] || Rails.application.secrets.secret_key_base
-                token = create_token(payload, secret)
+
+                created_jwt = create_token({uuid: @user.uuid})
+                cookies.signed[:jwt] = {value:  created_jwt, httponly: true}
+
                 render json: {
-                    token: token
+                    email: @user.email
                 }
             else
                 render json: { message: "Authentication Failed" }, status: 401
@@ -17,4 +18,8 @@ class Api::V1::AuthenticationController < ApplicationController
             render json: { message: "Could not find user" }, status: 401
         end
     end
+
+    def destroy
+        cookies.delete(:jwt)
+      end
 end
