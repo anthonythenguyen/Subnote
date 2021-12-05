@@ -36,11 +36,6 @@ function Login(props) {
       })
       .catch(() => {
         setIncorrectPassword(true);
-      })
-      .then((res) => {
-        if (res.status !== 200) {
-          document.cookie = "Secure; jwt=Bearer " + res.data;
-        }
       });
   }
   return (
