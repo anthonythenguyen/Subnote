@@ -36,6 +36,18 @@ function Login(props) {
       })
       .catch(() => {
         setIncorrectPassword(true);
+        headers: {
+          // 'application/json' is the modern content-type for JSON, but some
+          // older servers may use 'text/json'.
+          // See: http://bit.ly/text-json
+          "content-type": "text/json",
+          "X-CSRF-Token": csrf,
+        },
+      })
+      .then((res) => {
+        if (res.status !== 200) {
+          document.cookie = "Secure; jwt=Bearer " + res.data;
+        }
       });
   }
   return (
