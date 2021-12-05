@@ -9,14 +9,46 @@ export const queryURL =
 
 const instance = axios.create();
 
-instance.interceptors.request.use(
-  (req) => {
-    if (localStorage.getItem("AuthToken")) {
-      req.headers.Authorization = "Bearer " + localStorage.getItem("AuthToken");
-    } else {
-      req.headers.Authorization = null;
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
     }
-    return req;
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+instance.interceptors.request.use(
+  (config) => {
+    const csrf = document
+      .querySelector("meta[name='csrf-token']")
+      .getAttribute("content");
+
+    config.headers.common = {
+      ...config.headers.common,
+      "X-CSRF-TOKEN": csrf,
+      "content-type": "text/json",
+    };
+
+    if (localStorage.getItem("AuthToken")) {
+      config.headers.common = {
+        ...config.headers.common,
+        Authorization: getCookie(jwt),
+      };
+    } else {
+      config.headers.common = {
+        ...config.headers.common,
+        Authorization: null,
+      };
+    }
+    return config;
   },
   (error) => {
     return Promise.reject(error);

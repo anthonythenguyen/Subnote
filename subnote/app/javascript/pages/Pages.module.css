@@ -1,18 +1,30 @@
 .loginStuff {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
 }
 
 .loginContainer {
-    display: flex;
-    flex-direction: column;
-    background-color: #dddddd;
-    border-radius: 7px;
-    box-shadow: 5px 5px 15px #444;
-    padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #dddddd;
+  border-radius: 7px;
+  box-shadow: 5px 5px 15px #444;
+  padding: 3rem;
 }
 
 .LoginHeader {
-    margin-top: 0;
+  margin-top: 0;
+}
+
+.errorContainer {
+  background-color: #fbb;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+}
+
+.errorContainer p {
+  font-size: 0.75rem;
+  color: #f00;
 }

@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "../Pages.module.css";
 import axios from "../../handlers/axios";
+import { useNavigate } from "react-router-dom";
 
 function Login(props) {
   const [credentials, setCredentials] = useState({
     loginEmail: "",
     loginPassword: "",
   });
+  const [incorrectPassword, setIncorrectPassword] = useState(false);
+  const [correctPassword, setCorrectPassword] = useState(false);
+  const navigate = useNavigate();
   function loginClicked() {
     const csrf = document
       .querySelector("meta[name='csrf-token']")
@@ -19,24 +23,30 @@ function Login(props) {
           email: credentials.loginEmail,
           password: credentials.loginPassword,
         },
-        headers: {
-          // 'application/json' is the modern content-type for JSON, but some
-          // older servers may use 'text/json'.
-          // See: http://bit.ly/text-json
-          "content-type": "text/json",
-          "X-CSRF-Token": csrf,
-        },
       })
       .then((res) => {
-        if (res.status !== 200) {
-          document.cookie = "Secure; jwt=Bearer " + res.data;
+        if (res.status === 200) {
+          document.cookie =
+            "jwt=Bearer " + res.data.token + "; SameSite=None; Secure";
+          setCorrectPassword(true);
+          navigate("/notes");
+        } else {
+          setIncorrectPassword(true);
         }
+      })
+      .catch(() => {
+        setIncorrectPassword(true);
       });
   }
   return (
     <div>
       <div className={styles.loginContainer}>
         <h1 className={styles.LoginHeader}>Login</h1>
+        {incorrectPassword ? (
+          <div className={styles.errorContainer}>
+            <p>The email or password is incorrect</p>
+          </div>
+        ) : null}
         <label htmlFor="loginEmail" className={styles.loginStuff}>
           Email
         </label>
