@@ -1,0 +1,54 @@
+/*This is the styling for the default size*/
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  background-color: #fbfbfb;
+  border-radius: 7px;
+  padding: 1rem;
+  box-shadow: 5px 5px 15px #444;
+}
+
+.mainDiv .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mainDiv .title {
+  margin: 0;
+}
+
+/*This is the styling for the small size*/
+.mainDivSmall {
+  display: flex;
+  flex-direction: column;
+  background-color: #fbfbfb;
+  border-radius: 7px;
+  padding: 1rem;
+  width: 13vw;
+  box-shadow: 5px 5px 15px #444;
+}
+
+.mainDivSmall .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mainDivSmall .title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.mainDivSmall .header p {
+  margin: 0;
+}
+
+.mainDivSmall > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

@@ -12,8 +12,10 @@ class Api::V1::NotesController < ApplicationController
   end
 
   def update
-    note = Note.find_by(uuid: params[:id])    
-    puts params::inspect
+    note = Note.find_by(uuid: params[:id])
+    note.title = params[:title]
+    note.content = params[:content]
+    note.save
     render json: note, status:200
   end
 end

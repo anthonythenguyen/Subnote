@@ -1,13 +1,13 @@
 .hamburger {
-    width: 35px;
-    height: 5px;
-    background-color: #fbfbfb;
-    margin: 6px 1rem;
+  width: 35px;
+  height: 5px;
+  background-color: #000000;
+  margin: 6px 1rem;
 }
 
 .mainDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
