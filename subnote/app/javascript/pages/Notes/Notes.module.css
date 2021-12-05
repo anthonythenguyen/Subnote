@@ -1,7 +1,16 @@
 .mainDiv {
-    padding: 0;
-    margin: 0;
-    background-color: #3d3d3d;
-    min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: #3d3d3d;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/images/background.jpeg");
 }
 
+.contentDiv {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: hidden;
+  flex-direction: row;
+}

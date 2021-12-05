@@ -1,28 +1,25 @@
 class ApplicationController < ActionController::Base
-
+    include ::ActionController::Cookies
 
     def authenticate 
-        if request.headers["Authorization"]
             begin 
-                auth_header = request.headers["Authorization"]
-                decode_token = JWT.decode(auth_header.split(" ")[1], secret)
-                payload = decode_token.first
-                user_id = payload["user_id"]
-                @user = User.find(user_id)
+                jwt = cookies.signed[:jwt]
+                decoded_token = decode_token(jwt)
+                @user = User.find_by(uuid: decoded_token[0]["uuid"])
             rescue => exception
                 render json: {message: "Error: #{exception}", status: 403}
             end
-
-        else
-            render json: {message: "No Auth was sent", status: 403}
-        end
     end
 
     def secret
         ENV['SECRET_KEY_BASE'] || Rails.application.secrets.secret_key_base
     end
 
-    def create_token(payload, secret)
-        JWT.encode(payload, secret)
+    def create_token(payload)
+        JWT.encode payload, secret, 'HS256'
+    end
+
+    def decode_token(payload)
+        JWT.decode payload, secret, true, { algorithm: 'HS256' }
     end
 end

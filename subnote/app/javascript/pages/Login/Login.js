@@ -18,7 +18,8 @@ function Login(props) {
       .getAttribute("content");
 
     axios
-      .post("/api/v1/login", null, {
+      .post("/api/v1/auth/login", null, {
+        credentials: "include",
         params: {
           email: credentials.loginEmail,
           password: credentials.loginPassword,
@@ -26,8 +27,6 @@ function Login(props) {
       })
       .then((res) => {
         if (res.status === 200) {
-          document.cookie =
-            "jwt=Bearer " + res.data.token + "; SameSite=None; Secure";
           setCorrectPassword(true);
           navigate("/notes");
         } else {

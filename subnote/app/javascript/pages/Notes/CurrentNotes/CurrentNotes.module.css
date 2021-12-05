@@ -1,0 +1,29 @@
+.mainDiv {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow-y: auto;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.newNoteContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.newNote {
+  display: flex;
+  flex-direction: column;
+  background-color: #fbfbfb;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  padding: 1rem;
+  flex-grow: 1;
+  max-width: 66%;
+  box-shadow: 5px 5px 15px #444;
+}

@@ -1,0 +1,13 @@
+.mainDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fbfbfb;
+  border-radius: 7px;
+  padding: 7px;
+  box-shadow: 5px 5px 15px #444;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
