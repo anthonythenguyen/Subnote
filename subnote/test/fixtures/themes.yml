@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  background_color: MyString
+  background_image: MyString
+  card_background_color: MyString
+  accent_color: MyString
+  content_color_1: MyString
+  content_color_2: MyString
+  content_color_3: MyString
+  content_color_4: MyString
+  content_color_5: MyString
+  content_color_6: MyString
+
+two:
+  name: MyString
+  background_color: MyString
+  background_image: MyString
+  card_background_color: MyString
+  accent_color: MyString
+  content_color_1: MyString
+  content_color_2: MyString
+  content_color_3: MyString
+  content_color_4: MyString
+  content_color_5: MyString
+  content_color_6: MyString
