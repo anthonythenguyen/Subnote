@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 2021_12_04_083215) do
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.string "createdby"
+    t.string "ownerid"
+    t.string "parentid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
