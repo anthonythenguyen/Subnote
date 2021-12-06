@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function CurrentNotes(props) {
+  function createNewNote() {}
+
   return (
     <div className={styles.mainDiv}>
       {props.notes.map((ele) => {
@@ -20,7 +22,7 @@ function CurrentNotes(props) {
         );
       })}
       <div className={styles.newNoteContainer}>
-        <div className={styles.newNote}>
+        <div className={styles.newNote} onClick={createNewNote}>
           <FontAwesomeIcon icon={faPlus} />
         </div>
       </div>

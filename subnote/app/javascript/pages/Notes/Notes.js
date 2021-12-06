@@ -12,7 +12,6 @@ function Notes(props) {
 
   useEffect(() => {
     axios.get("/api/v1/notes").then((res) => {
-      console.log(res.data);
       setNotes((prev) => res.data);
     });
   }, []);
