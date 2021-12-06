@@ -19,7 +19,6 @@ function Login(props) {
 
     axios
       .post("/api/v1/auth/login", null, {
-        credentials: "include",
         params: {
           email: credentials.loginEmail,
           password: credentials.loginPassword,

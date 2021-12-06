@@ -4,6 +4,7 @@ import styles from "./NoteCard.module.css";
 import { convertFromRaw, convertToRaw, Editor, EditorState } from "draft-js";
 import "draft-js/dist/Draft.css";
 import axios from "../../handlers/axios";
+import Spinner from "../Spinner/Spinner";
 
 function NoteCard(props) {
   let date = new Date(props.createDate);
@@ -47,10 +48,18 @@ function NoteCard(props) {
     <div className={props.small ? styles.mainDivSmall : styles.mainDiv}>
       <div className={styles.header}>
         <h1 className={styles.title}>{props.title}</h1>
-        <p>{unsavedChanges ? "Changes are saving" : "Up to date"}</p>
+        {unsavedChanges ? (
+          <>
+            <Spinner />
+          </>
+        ) : null}
         <p>{date.toLocaleDateString("en-US", options)}</p>
       </div>
-      <Editor editorState={editorState} onChange={textBoxChanged} />
+      <Editor
+        editorState={editorState}
+        onChange={textBoxChanged}
+        placeholder="Begin your story"
+      />
     </div>
   );
 }
