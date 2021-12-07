@@ -1,18 +1,21 @@
-
 .button {
-    border-radius: 7px;
-    border: none;
-    padding: 1rem auto;
-    margin: 1rem;
-    transition: background-color 0.15s;
-    padding: 18px 50px;
-    font-size: large;
+  border-radius: 7px;
+  border: none;
+  padding: 1rem auto;
+  margin: 1rem;
+  transition: background-color 0.15s;
+  padding: 18px 50px;
+  font-size: large;
+}
+
+.small {
+  font-size: medium;
 }
 
 .button:hover {
-    background-color: #e6e6e6;
+  background-color: #e6e6e6;
 }
 
 .button:active {
-    background-color: #d1d1d1;
+  background-color: #d1d1d1;
 }

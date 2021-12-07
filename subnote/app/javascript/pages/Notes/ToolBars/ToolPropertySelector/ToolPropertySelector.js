@@ -13,8 +13,9 @@ function ToolPropertySelector(props) {
                 styles.colorOption +
                 (props.currentValue === ele ? " " + styles.active : "")
               }
+              key={ele}
               style={{ backgroundColor: ele }}
-              onClick={() => props.setActiveValue(ele, props.type)}
+              onClick={() => props.setActiveValue(ele, props.name)}
             ></div>
           );
         })}

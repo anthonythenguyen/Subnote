@@ -27,3 +27,11 @@
   max-width: 66%;
   box-shadow: 5px 5px 15px #444;
 }
+
+.newNote:hover {
+  background-color: #e6e6e6;
+}
+
+.newNote:active {
+  background-color: #d1d1d1;
+}

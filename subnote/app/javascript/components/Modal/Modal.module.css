@@ -1,0 +1,21 @@
+.mainDiv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000a;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fbfbfb;
+  border-radius: 7px;
+  padding: 1rem;
+  box-shadow: 5px 5px 15px #444;
+}

@@ -13,12 +13,6 @@ function ToolBars(props) {
       icon: faFont,
       config: [
         {
-          name: "fontSize",
-          type: "dropdown",
-          currentValue: "medium",
-          values: ["small", "medium", "large"],
-        },
-        {
           name: "color",
           type: "colorGrid",
           currentValue: "#000000",
@@ -30,6 +24,12 @@ function ToolBars(props) {
             "#FDE05E",
             "#CAAAEE",
           ],
+        },
+        {
+          name: "fontSize",
+          type: "dropdown",
+          currentValue: "medium",
+          values: ["small", "medium", "large"],
         },
       ],
     },
@@ -64,7 +64,7 @@ function ToolBars(props) {
         })}
       </ToolBar>
       <ToolBar col>
-        {tools[0].config.map((ele) => {
+        {currentToolProperties.map((ele) => {
           return (
             <ToolPropertySelector
               key={ele.name}

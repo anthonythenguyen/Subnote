@@ -4,6 +4,7 @@ import styles from "./NoteCard.module.css";
 import { convertFromRaw, convertToRaw, Editor, EditorState } from "draft-js";
 import "draft-js/dist/Draft.css";
 import axios from "../../handlers/axios";
+import Spinner from "../Spinner/Spinner";
 
 function NoteCard(props) {
   let date = new Date(props.createDate);
@@ -16,9 +17,12 @@ function NoteCard(props) {
     minute: "2-digit",
   };
 
-  const [editorState, setEditorState] = React.useState(() =>
+  const [editorState, setEditorState] = useState(() =>
     EditorState.createWithContent(convertFromRaw(JSON.parse(props.content)))
   );
+
+  const [unsavedChanges, setUnsavedChanges] = useState(false);
+  const [timeoutHandle, setTimeoutHandle] = useState(null);
 
   function updatePost() {
     let raw = convertToRaw(editorState.getCurrentContent());
@@ -29,23 +33,33 @@ function NoteCard(props) {
       })
       .then((res) => {
         console.log(res);
+        setUnsavedChanges(false);
       });
   }
 
-  function clickMe() {
-    updatePost();
+  function textBoxChanged(setStateFunction) {
+    window.clearTimeout(timeoutHandle);
+    setUnsavedChanges(true);
+    setTimeoutHandle(window.setTimeout(updatePost, 1000));
+    setEditorState(setStateFunction);
   }
 
   return (
     <div className={props.small ? styles.mainDivSmall : styles.mainDiv}>
       <div className={styles.header}>
-        <div>
-          <h1 className={styles.title}>{props.title}</h1>
-        </div>
+        <h1 className={styles.title}>{props.title}</h1>
+        {unsavedChanges ? (
+          <>
+            <Spinner />
+          </>
+        ) : null}
         <p>{date.toLocaleDateString("en-US", options)}</p>
       </div>
-      <Editor editorState={editorState} onChange={setEditorState} />
-      <button onClick={() => clickMe()}>Save</button>
+      <Editor
+        editorState={editorState}
+        onChange={textBoxChanged}
+        placeholder="Begin your story"
+      />
     </div>
   );
 }

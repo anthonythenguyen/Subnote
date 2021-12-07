@@ -7,21 +7,24 @@ import RelativeNotes from "./RelativeNotes/RelativeNotes";
 import CurrentNotes from "./CurrentNotes/CurrentNotes";
 import ToolBars from "./ToolBars/ToolBars";
 
+function getData(setNotes) {
+  axios.get("/api/v1/notes").then((res) => {
+    setNotes((prev) => res.data);
+  });
+}
+
 function Notes(props) {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/v1/notes").then((res) => {
-      console.log(res.data);
-      setNotes((prev) => res.data);
-    });
+    getData(setNotes);
   }, []);
 
   return (
     <div className={styles.mainDiv}>
       <Header />
       <div className={styles.contentDiv}>
-        <CurrentNotes notes={notes} />
+        <CurrentNotes notes={notes} refreshData={() => getData(setNotes)} />
         <ToolBars />
       </div>
     </div>
