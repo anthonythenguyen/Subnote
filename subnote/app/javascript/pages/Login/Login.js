@@ -18,11 +18,9 @@ function Login(props) {
       .getAttribute("content");
 
     axios
-      .post("/api/v1/auth/login", null, {
-        params: {
+      .post("/api/v1/auth/login", {
           email: credentials.loginEmail,
           password: credentials.loginPassword,
-        },
       })
       .then((res) => {
         if (res.status === 200) {
