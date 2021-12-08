@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_12_04_185632) do
     t.string "first_name"
     t.string "last_name"
     t.string "email", null: false
-    t.string "password"
+    t.string "password_digest"
     t.string "default_theme"
     t.string "background_picture_url"
     t.string "profile_picture"

@@ -22,4 +22,6 @@ class Api::V1::Auth::AuthController < ApplicationController
     def destroy
         cookies.delete(:jwt)
       end
+
+    
 end
